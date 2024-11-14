@@ -16,4 +16,5 @@ if [[ -e /usr/local/share/vulkan/icd.d/intel_icd.x86_64.json ]]; then
 fi
 
 sed -i -e 's:usr/lib:usr/local/lib:' /usr/share/vulkan/icd.d/intel_icd.x86_64.json
-ln -sf /usr{/local,}/lib64/dri/iris_dri.so
+[[ -f /usr/local/lib64/dri/iris_dri.so ]] && ln -sf /usr{/local,}/lib64/dri/iris_dri.so
+[[ -f /usr/local/lib64/libgallium_dri.so ]] && ln -sf /usr{/local,}/lib64/libgallium_dri.so
